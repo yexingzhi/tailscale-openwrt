@@ -12,6 +12,14 @@ jobs:
       - name: Print Repository Owner
         run: echo "Repository Owner:${{ github.repository_owner }}"
 
+      - name: Check Repository Owner
+        id: check_owner
+        run: |
+          if [ "${{ github.repository_owner }}" != "CH3NGYZ" ]; then
+            echo "Repository owner is not CH3NGYZ. Cancelling the job."
+            exit 1
+          fi
+
       - name: Set Version
         id: set_version
         run: echo "::set-output name=version::${{ github.event.inputs.version }}"
