@@ -18,7 +18,7 @@ elif [ "$arch_" == "riscv64" ]; then
     arch=riscv64
 else
     echo "INSTALL: --------------------------------------------"
-    echo "当前机器的架构是 ${arch_}${endianness}"
+    echo "当前机器的架构是 [${arch_}${endianness}]"
     echo "脚本内置的架构代码可能有误,不符合您的机器"
     echo "请在这个issue留下评论以便作者及时修改脚本"
     echo "https://github.com/CH3NGYZ/tailscale-openwrt/issues/6"
@@ -73,7 +73,7 @@ done
 
 if [ "$download_success" != true ]; then
     echo "INSTALL: -------------------------"
-    echo "所有代理下载均失败，请检查网络或稍后再试"
+    echo "所有代理下载均失败，请检查网络、DNS或稍后再试"
     echo "----------------------------------"
     exit 1
 fi
@@ -95,8 +95,8 @@ echo "正在启动 Tailscale 前台程序"
 echo "-------------------------"
 tailscale up
 
-echo "INSTALL: ---------------------------------------------"
-echo "当前机器的架构是 arch_:${arch_}${endianness}| arch:${arch}"
-echo "如果成功运行, 请在这个issue留下评论以便作者及时修改说明文档: "
-echo "https://github.com/CH3NGYZ/tailscale-openwrt/issues/6"
-echo "------------------------------------------------------"
+# echo "INSTALL: ---------------------------------------------"
+# echo "当前机器的架构是 arch_:${arch_}${endianness}| arch:${arch}"
+# echo "如果成功运行, 请在这个issue留下评论以便作者及时修改说明文档: "
+# echo "https://github.com/CH3NGYZ/tailscale-openwrt/issues/6"
+# echo "------------------------------------------------------"
