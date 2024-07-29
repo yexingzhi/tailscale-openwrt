@@ -49,11 +49,15 @@ opkg update
 # 检查并安装包
 required_packages="libustream-openssl ca-bundle kmod-tun coreutils-timeout"
 for package in $required_packages; do
-    if ! opkg status $package | grep -q "Status: install"; then
-        opkg install $package
+    # 检查包是否已安装
+    if ! opkg list-installed | grep -q "$package"; then
+        echo "INSTALL: 包 $package 未安装，开始安装..."
+        opkg install "$package"
         if [ $? -ne 0 ]; then
             echo "INSTALL: 安装 $package 失败，请手动安装或检查原因"
             exit 1
+        else
+            echo "INSTALL: 包 $package 安装成功"
         fi
     else
         echo "INSTALL: 包 $package 已安装，跳过"
