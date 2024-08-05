@@ -48,24 +48,24 @@ if [ ! -f /tmp/tailscale ]; then
     version_timeout=20
     version_url="CH3NGYZ/tailscale-openwrt/releases/latest"
     version_proxys="https://github.com
-                    https://ghproxy.cc/https://github.com
-                    https://git.xfj0.cn/https://github.com
-                    https://cors.isteed.cc/https://github.com
-                    https://940740.xyz/https://github.com
-                    https://hub.gitmirror.com/https://github.com
-                    https://gh.con.sh/https://github.com
-                    https://mirror.ghproxy.com/https://github.com
-                    https://slink.ltd/https://github.com
-                    https://dl.ghpig.top/https://github.com
-                    https://gh.ddlc.top/https://github.com
-                    https://gh.h233.eu.org/https://github.com"
+                                https://ghproxy.cc/https://github.com
+                                https://git.xfj0.cn/https://github.com
+                                https://cors.isteed.cc/https://github.com
+                                https://940740.xyz/https://github.com
+                                https://hub.gitmirror.com/https://github.com
+                                https://gh.con.sh/https://github.com
+                                https://mirror.ghproxy.com/https://github.com
+                                https://slink.ltd/https://github.com
+                                https://dl.ghpig.top/https://github.com
+                                https://gh.ddlc.top/https://github.com
+                                https://gh.h233.eu.org/https://github.com"
 
     range="1 2 3"
 
     # 尝试获取最新版本号
     for attempt in $range; do
         for version_proxy in $version_proxys; do
-            version_proxy_url="$version_proxy$version_url"
+            version_proxy_url="$version_proxy/$version_url"
             get_version=$(timeout $version_timeout wget -c -qO- "$version_proxy_url" | grep 已从上游同步 | head -1 | cut -d'%' -f 2)
             if [ -n "$get_version" ]; then
                 echo "DOWNLOAD: -----------------------------------"
