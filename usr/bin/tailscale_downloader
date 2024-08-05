@@ -46,25 +46,26 @@ if [ ! -f /tmp/tailscale ]; then
 
     latest_version="not_available"
     version_timeout=20
-    version_url="https://github.com/CH3NGYZ/tailscale-openwrt/releases/latest"
-    version_proxys="https://ghproxy.cc
-                    https://git.xfj0.cn
-                    https://cors.isteed.cc
-                    https://940740.xyz
-                    https://hub.gitmirror.com
-                    https://gh.con.sh
-                    https://mirror.ghproxy.com
-                    https://slink.ltd
-                    https://dl.ghpig.top
-                    https://gh.ddlc.top
-                    https://gh.h233.eu.org"
+    version_url="github.com/CH3NGYZ/tailscale-openwrt/releases/latest"
+    version_proxys="https://
+                    https://ghproxy.cc/https://
+                    https://git.xfj0.cn/https://
+                    https://cors.isteed.cc/https://
+                    https://940740.xyz/https://
+                    https://hub.gitmirror.com/https://
+                    https://gh.con.sh/https://
+                    https://mirror.ghproxy.com/https://
+                    https://slink.ltd/https://
+                    https://dl.ghpig.top/https://
+                    https://gh.ddlc.top/https://
+                    https://gh.h233.eu.org/https://"
 
     range="1 2 3"
 
     # 尝试获取最新版本号
     for attempt in $range; do
         for version_proxy in $version_proxys; do
-            version_proxy_url="$version_proxy/$version_url"
+            version_proxy_url="$version_proxy$version_url"
             get_version=$(timeout $version_timeout wget -c -qO- "$version_proxy_url" | grep 已从上游同步 | head -1 | cut -d'%' -f 2)
             if [ -n "$get_version" ]; then
                 echo "DOWNLOAD: -----------------------------------"
