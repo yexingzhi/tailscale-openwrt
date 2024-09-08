@@ -1,5 +1,5 @@
 # Tailscale on OpenWRT :smiley: [![Page Views Count](https://badges.toozhao.com/badges/01GZWH4F36G14VWXT8RP9KRCYV/green.svg)](https://badges.toozhao.com/stats/01GZWH4F36G14VWXT8RP9KRCYV)
-# 注意, 本项目仅适用于由于闪存剩余空间不足以装下tailscale文件的情况，如您内存充足，请参考手动[安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695)
+# 注意, 本项目仅适用于闪存剩余空间不足以装下tailscale文件的情况，如您内存充足，请参考手动[安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695)
 
 |  在OpenWRT上部署Tailscale的最简单方法 |
 | ------------ |
