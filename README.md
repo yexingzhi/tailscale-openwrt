@@ -1,6 +1,15 @@
 # Tailscale on OpenWRT :smiley: [![Page Views Count](https://badges.toozhao.com/badges/01GZWH4F36G14VWXT8RP9KRCYV/green.svg)](https://badges.toozhao.com/stats/01GZWH4F36G14VWXT8RP9KRCYV)
-# 注意, 本项目仅适用于闪存剩余空间不足以装下tailscale文件但内存充足的情况，如您路由器存储空间充足，或运行内存不足，请参考手动[安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695)
+# 注意, 本项目是否可用于您的路由器，请参考以下表格：
+* `不足`、`充足`是指能否放得下 `zip文件+解压后的可执行文件(大约80MB)`
 
+|| 储存不足 | 储存充足 |
+| --- | --- | --- |
+| 内存不足 | 不可用 | 不可用，[手动安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695) |
+| 内存充足 | 可用 | 可用  |
+
+
+
+------------
 |  在OpenWRT上部署Tailscale的最简单方法 |
 | ------------ |
 |  已测试支持的架构：x86_64、aarch64、mipsle、mips |
