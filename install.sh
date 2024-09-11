@@ -99,12 +99,22 @@ if [ "$download_success" != true ]; then
     exit 1
 fi
 
+if [ ! -e "/etc/init.d/tailscale" ]; then
+    echo "/etc/init.d/tailscale 不存在, 请重试."
+    exit 1
+fi
+
 /etc/init.d/tailscale enable
 
 echo "INSTALL: --------------"
 echo "正在启动 Tailscale 下载器"
 echo "-----------------------"
 tailscale_downloader
+
+if [ ! -e "/tmp/tailscale" ]; then
+    echo "/tmp/tailscale 不存在, 请重试."
+    exit 1
+fi
 
 echo "INSTALL: ----------------"
 echo "正在启动 Tailscale 后台服务"
