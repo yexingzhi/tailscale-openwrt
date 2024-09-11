@@ -45,20 +45,18 @@ if [ ! -f /tmp/tailscale ]; then
     esac
 
     latest_version="not_available"
-    version_timeout=5
+    version_timeout=10
     version_url="CH3NGYZ/tailscale-openwrt/releases/latest"
-    version_proxys="https://github.com
-                    https://ghproxy.cc/https://github.com
-                    https://git.xfj0.cn/https://github.com
-                    https://cors.isteed.cc/https://github.com
-                    https://940740.xyz/https://github.com
-                    https://hub.gitmirror.com/https://github.com
-                    https://gh.con.sh/https://github.com
+    version_proxys="https://dgithub.xyz
+                    https://gh.jiasu.in/https://github.com
                     https://mirror.ghproxy.com/https://github.com
-                    https://slink.ltd/https://github.com
-                    https://dl.ghpig.top/https://github.com
-                    https://gh.ddlc.top/https://github.com
-                    https://gh.h233.eu.org/https://github.com"
+                    https://www.ghproxy.cn/https://github.com
+                    https://www.ghproxy.cc/https://github.com
+                    https://gh-proxy.com/https://github.com
+                    https://ghproxy.cc/https://github.com
+                    https://cf.ghproxy.cc/https://github.com
+                    https://ghproxy.cn/https://github.com
+                    https://github.com"
 
     range="1 2 3"
 
@@ -96,7 +94,7 @@ if [ ! -f /tmp/tailscale ]; then
     echo -e "tailscale_${version}/tailscaled" >> /tmp/tailscale_${version}_files.txt
 
     download_success=false
-    timeout_seconds=10
+    timeout_seconds=30
 
     # 尝试下载并解压
     for attempt in $range; do
