@@ -6,7 +6,7 @@
 || 储存不足 | 储存充足 |
 | --- | --- | --- |
 | 内存不足 | 不可用 | 不可用，[手动安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695) |
-| 内存充足 | 可用 | 可用, 但请考虑尽量将 tailscale 安装到内置存储中  |
+| 内存充足 | 可用 | 可用, 但请考虑尽量将 tailscale 安装到内置存储中, [手动安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695)  |
 
 
 
