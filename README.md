@@ -1,12 +1,12 @@
 # Tailscale on OpenWRT :smiley: [![Page Views Count](https://badges.toozhao.com/badges/01GZWH4F36G14VWXT8RP9KRCYV/green.svg)](https://badges.toozhao.com/stats/01GZWH4F36G14VWXT8RP9KRCYV)
-# 注意, 本项目是否可用于您的路由器，请参考以下表格：
-* `不足`、`充足`是指能否放得下 `zip文件+解压后的可执行文件(大约80MB)`
 * 本项目最初编写的目的是适配存储不足, 但内存充足的设备, 原理是将下载的tailscale放入/tmp中, 当然你如果追求版本更新, 也可以使用本项目, 如果你存储充足, 请尽量考虑安装到机内存储中 (因为国内的CDN有时候是会失效的, 重启路由器下载不下来tailscale就连不上了).
+* 注意, 本项目是否可用于您的路由器，请参考以下表格：
 
-|| 储存不足 | 储存充足 |
+|| 硬盘剩余空间 < 80MB | 硬盘剩余空间 > 80MB |
 | --- | --- | --- |
-| 内存不足 | 不可用 | 不可用，但你可以将 tailscale 安装到内置存储中, [手动安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695) |
-| 内存充足 | 可用 | 可用, 但请尽量考虑将 tailscale 安装到内置存储中, [手动安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695) |
+| 内存剩余空间 < 80MB | 不可用 | 不可用，但你可以手动将 tailscale 安装到内置存储中, [手动安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695) |
+| 内存剩余空间 > 80MB | 可用 | 可用, 但请尽量考虑将 tailscale 安装到内置存储中, [手动安装方法](https://github.com/CH3NGYZ/tailscale-openwrt/issues/18#issuecomment-2336612695) |
+* zip文件+解压后的可执行文件大约80MB
 
 
 
