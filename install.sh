@@ -54,8 +54,8 @@ for package in $required_packages; do
         echo "INSTALL: 包 $package 未安装，开始安装..."
         opkg install "$package"
         if [ $? -ne 0 ]; then
-            echo "INSTALL: 安装 $package 失败，请手动安装或检查原因"
-            exit 1
+            echo "INSTALL: 安装 $package 失败，跳过该包，如果无法正常运行 tailscale，请排查是否需要手动安装该包"
+            continue
         else
             echo "INSTALL: 包 $package 安装成功"
         fi
@@ -63,6 +63,7 @@ for package in $required_packages; do
         echo "INSTALL: 包 $package 已安装，跳过"
     fi
 done
+
 
 # 下载安装包
 timeout_seconds=5
