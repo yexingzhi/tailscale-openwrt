@@ -126,7 +126,7 @@ sleep 3
 echo "INSTALL: ----------------"
 echo "正在启动 Tailscale 前台程序"
 echo "-------------------------"
-tailscale up
+#tailscale up --accept-routes --accept-dns=false --advertise-routes=subnet --login-server=http://hostname:8080
 
 echo "INSTALL: -------------------------------------------------------------------------"
 echo "你可以运行 tailscale up --advertise-routes=192.168.1.0/24 以启用子网中继，请自行修改网段"
